@@ -10,8 +10,14 @@ import (
 	"github.com/gin-gonic/gin"
 	validator "gopkg.in/go-playground/validator.v8"
 )
-
-// Ping 状态检查页面
+// Ping status godoc
+// @Summary Ping 状态检查页面
+// @Description 检测服务状态
+// @Accept  json
+// @Produce json
+// @Success 200 {object} serializer.Response
+// @Failure 404 {string} string "Can not find pages"
+// @Router /api/v1/ping [post]
 func Ping(c *gin.Context) {
 	c.JSON(200, serializer.Response{
 		Code: 0,

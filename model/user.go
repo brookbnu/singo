@@ -6,7 +6,7 @@ import (
 )
 
 // User 用户模型
-type User struct {
+type User struct { // 表名默认就是结构体名称的复数，默认表名是 `users`
 	gorm.Model
 	UserName       string
 	PasswordDigest string
